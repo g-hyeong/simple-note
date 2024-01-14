@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memo/utils/utils.dart';
 import 'package:gap/gap.dart';
+import 'package:memo/widgets/display_white_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,27 +20,16 @@ class HomeScreen extends StatelessWidget {
                 height: deviceSize.height * 0.15,
                 width: deviceSize.width,
                 color: colors.primary,
-                child: Center(
+                child: const Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Gap(10),
-                      Text(
-                        'Aug 7, 2023',
-                        style: context.textTheme.headlineSmall?.copyWith(
-                          color: colors.surface,
+                      DisplayWhiteText(
+                          text: 'Aug 7, 2023',
                           fontSize: 20,
-                        ),
-                      ),
-                      const Gap(10),
-                      Text(
-                        'Simple Memo',
-                        style: context.textTheme.headlineSmall?.copyWith(
-                          color: colors.surface,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                        ),
-                      ),
+                          fontWeight: FontWeight.normal),
+                      Gap(10),
+                      DisplayWhiteText(text: 'Simple Memo', fontSize: 40),
                     ],
                   ),
                 ),
