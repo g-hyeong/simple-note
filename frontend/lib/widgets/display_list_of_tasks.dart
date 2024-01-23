@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memo/data/data.dart';
 import 'package:memo/utils/utils.dart';
-
-import 'common_container.dart';
+import 'package:memo/widgets/widgets.dart';
 
 class DisplayListOfTasks extends StatelessWidget {
   const DisplayListOfTasks({
@@ -31,13 +30,20 @@ class DisplayListOfTasks extends StatelessWidget {
                 style: context.textTheme.headlineSmall,
               ),
             )
-          : ListView.builder(
+          : ListView.separated(
               shrinkWrap: true,
               itemCount: tasks.length,
               padding: EdgeInsets.zero,
               itemBuilder: (ctx, index) {
-                return const Text('Test');
-              }),
+                final task = tasks[index];
+                return TaskTile(task: task);
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return const Divider(
+                  thickness: 1.5,
+                );
+              },
+            ),
     );
   }
 }

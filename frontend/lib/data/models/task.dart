@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:memo/utils/utils.dart';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class Task extends Equatable {
@@ -7,7 +8,7 @@ class Task extends Equatable {
   final String note;
   final String time;
   final String date;
-  // final TaskCategory category;
+  final TaskCategories category;
   final bool isCompleted;
 
   const Task(
@@ -16,6 +17,7 @@ class Task extends Equatable {
       required this.note,
       required this.time,
       required this.date,
+      required this.category,
       required this.isCompleted});
 
   @override
@@ -26,6 +28,7 @@ class Task extends Equatable {
       note,
       time,
       date,
+      category,
       isCompleted,
     ];
   }

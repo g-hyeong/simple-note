@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:memo/data/data.dart';
 import 'package:memo/utils/utils.dart';
 import 'package:memo/widgets/widgets.dart';
 
@@ -44,14 +45,44 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const DisplayListOfTasks(tasks: []),
+                      const DisplayListOfTasks(tasks: [
+                        Task(
+                            title: 'title',
+                            note: 'note',
+                            time: '10:12',
+                            category: TaskCategories.education,
+                            date: 'Aug, 07',
+                            isCompleted: false),
+                        Task(
+                            title: 'title2 title2 title2 title2',
+                            note: 'note2',
+                            time: '10:14',
+                            category: TaskCategories.health,
+                            date: 'Aug, 07',
+                            isCompleted: true)
+                      ]),
                       const Gap(20),
                       Text(
                         'Completed',
                         style: context.textTheme.headlineMedium,
                       ),
                       const DisplayListOfTasks(
-                        tasks: [],
+                        tasks: [
+                          Task(
+                              title: 'title',
+                              note: 'note',
+                              time: '10:12',
+                              category: TaskCategories.education,
+                              date: 'Aug, 07',
+                              isCompleted: false),
+                          Task(
+                              title: 'title2 title2 title2 title2',
+                              note: 'note2',
+                              time: '10:14',
+                              category: TaskCategories.health,
+                              date: 'Aug, 07',
+                              isCompleted: true)
+                        ],
                         isCompletedTasks: true,
                       ),
                       const Gap(20),
