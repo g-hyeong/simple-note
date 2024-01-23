@@ -14,10 +14,10 @@ String helloWorld(HelloWorldRef ref) {
 }
 
 class MemoApp extends ConsumerWidget {
+  const MemoApp({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final String value = ref.watch(helloWorldProvider);
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
