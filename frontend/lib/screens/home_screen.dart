@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                             isCompleted: false),
                         Task(
                             title: 'title2 title2 title2 title2',
-                            note: 'note2',
+                            note: '',
                             time: '10:14',
                             category: TaskCategories.health,
                             date: 'Aug, 07',
