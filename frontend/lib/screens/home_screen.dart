@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:memo/data/data.dart';
 import 'package:memo/utils/utils.dart';
 import 'package:memo/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
+  static HomeScreen builder(BuildContext context, GoRouterState state) =>
+      const HomeScreen();
   const HomeScreen({super.key});
 
   @override

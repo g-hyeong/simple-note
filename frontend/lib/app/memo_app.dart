@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:memo/config/config.dart';
-import 'package:memo/screens/screens.dart';
+import 'package:memo/config/routes/routes.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'memo_app.g.dart';
@@ -18,10 +18,11 @@ class MemoApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp(
+    final routeConfig = ref.watch(routesProvider);
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
-      home: const HomeScreen(),
+      routerConfig: routeConfig,
     );
   }
 }
