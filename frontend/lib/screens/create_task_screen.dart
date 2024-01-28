@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:memo/widgets/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CreateTaskScreen extends StatelessWidget {
   static CreateTaskScreen builder(BuildContext context, GoRouterState state) =>
@@ -11,7 +13,55 @@ class CreateTaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: DisplayWhiteText(text: 'Add New Task'),
+        title: const DisplayWhiteText(text: 'Add New Task'),
+      ),
+      body: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const CommonTextField(
+              title: 'Task Title',
+              hintText: 'Task Title',
+            ),
+            const Gap(16),
+            Row(
+              children: [
+                Expanded(
+                  child: CommonTextField(
+                    title: 'Date',
+                    hintText: 'Aug, 07',
+                    readOnly: true,
+                    suffixIcon: IconButton(
+                        onPressed: () {},
+                        icon: const FaIcon(FontAwesomeIcons.calendar)),
+                  ),
+                ),
+                const Gap(10),
+                Expanded(
+                  child: CommonTextField(
+                    title: 'Time',
+                    hintText: '10: 30',
+                    readOnly: true,
+                    suffixIcon: IconButton(
+                        onPressed: () {},
+                        icon: const FaIcon(FontAwesomeIcons.clock)),
+                  ),
+                ),
+              ],
+            ),
+            const Gap(16),
+            const CommonTextField(
+              title: 'Note',
+              hintText: 'Task note',
+              maxLines: 6,
+            ),
+            const Gap(60),
+            ElevatedButton(
+                onPressed: () {}, child: const DisplayWhiteText(text: 'Save')),
+          ],
+        ),
       ),
     );
   }

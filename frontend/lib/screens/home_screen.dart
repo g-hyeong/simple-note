@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:memo/config/routes/routes.dart';
 import 'package:memo/data/data.dart';
 import 'package:memo/utils/utils.dart';
 import 'package:memo/widgets/widgets.dart';
@@ -90,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       const Gap(20),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => context.push(RouteLocation.createTask),
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: DisplayWhiteText(text: 'Add New Task'),
